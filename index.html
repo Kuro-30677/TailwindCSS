@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REG Registration Office - Maejo University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-50 text-gray-800 ">
+
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center py-3 px-6">
+            <!-- Logo + Title -->
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="Picture/Maejo_logo.png" alt="Maejo University Logo" class="h-14">
+                </a>
+                <div class="text-green-700 leading-tight">
+                    <h1 class="text-4xl font-extrabold">REG</h1>
+                    <p class="text-lg font-semibold">Registration Office</p>
+                    <p class="text-sm">Maejo University</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+    <nav class="bg-green-600 text-white text-sm relative">
+        <div class="container mx-auto flex justify-between items-center px-6 py-2">
+
+            <!-- Left: Logo & Hamburger (Mobile) -->
+            <div class="flex items-center gap-4">
+                <!-- Hamburger Button (Mobile only) -->
+                <button onclick="toggleDropdown('mainMenu')" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+            <!-- Menu (Desktop) -->
+            <div class="hidden md:flex gap-4 items-center">
+                <a href="index.html" class="hover:underline">หน้าหลัก</a>
+
+                <div class="relative group">
+                    <button onclick="toggleDropdown('academicDropdown')" class="flex items-center hover:underline focus:outline-none">
+                        บริการวิชาการ <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"/></svg>
+                    </button>
+                    <div id="academicDropdown" class="absolute hidden bg-white text-green-700 mt-2 rounded shadow-lg w-48 z-10">
+                        <a href="ตารางเรียน.html" class="block px-4 py-2 hover:bg-green-100">ตารางเรียน</a>
+                        <a href="ปฎิทินการศึกษา.html" class="block px-4 py-2 hover:bg-green-100">ปฏิทินการศึกษา</a>
+                        <a href="ตารางการใช้ห้องเรียน.html" class="block px-4 py-2 hover:bg-green-100">ตารางการใช้ห้อง</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button onclick="toggleDropdown('guideDropdown')" class="flex items-center hover:underline focus:outline-none">
+                        คู่มือ <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"/></svg>
+                    </button>
+                    <div id="guideDropdown" class="absolute hidden bg-white text-green-700 mt-2 rounded shadow-lg w-48 z-10">
+                        <a href="student_guide.html" class="block px-4 py-2 hover:bg-green-100">คู่มือนักศึกษา</a>
+                        <a href="teacher_guide.html" class="block px-4 py-2 hover:bg-green-100">คู่มืออาจารย์</a>
+                        <a href="staff_guide.html" class="block px-4 py-2 hover:bg-green-100">คู่มือเจ้าหน้าที่</a>
+                    </div>
+                </div>
+
+                <a href="faq.html" class="hover:underline">คำถามที่พบบ่อย</a>
+                <a href="contact.html" class="hover:underline">ติดต่อ</a>
+            </div>
+        </div>
+
+        <!-- Drobdown Login -->
+        <div class="flex gap-4 items-center">
+            <div class="relative group">
+                <button onclick="toggleDropdown('loginDropdown')" 
+                    class="bg-white text-green-700 font-bold text-xs md:text-sm px-3 py-1 rounded hover:bg-green-100 transition flex items-center">
+                    เข้าสู่ระบบ
+                    <svg class="ml-1 w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"/></svg>
+                </button>
+                <div id="loginDropdown" class="absolute right-0 hidden bg-white text-green-700 mt-2 rounded shadow-lg w-48 z-10">
+                    <a href="" class="block px-4 py-2 hover:bg-green-100">เข้าสู่ระบบสำหรับนักศึกษา</a>
+                    <a href="teacher_login.html" class="block px-4 py-2 hover:bg-green-100">เข้าสู่ระบบสำหรับอาจารย์</a>
+                </div>
+            </div>
+            <div class="text-white text-xs md:text-sm">ไทย | Eng</div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mainMenu" class="md:hidden hidden bg-white text-green-700 px-6 py-4 space-y-2 shadow-lg">
+        <a href="index.html" class="block py-2 hover:bg-green-100 rounded">หน้าหลัก</a>
+        <button onclick="toggleDropdown('academicDropdownMobile')" class="flex items-center w-full py-2 hover:bg-green-100 rounded">
+            บริการวิชาการ <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"/></svg>
+        </button>
+        <div id="academicDropdownMobile" class="hidden pl-4">
+            <a href="ตารางเรียน.html" class="block py-2 hover:bg-green-100 rounded">ตารางเรียน</a>
+            <a href="ปฎิทินการศึกษา.html" class="block py-2 hover:bg-green-100 rounded">ปฏิทินการศึกษา</a>
+            <a href="ตารางการใช้ห้องเรียน.html" class="block py-2 hover:bg-green-100 rounded">ตารางการใช้ห้อง</a>
+        </div>
+
+        <button onclick="toggleDropdown('guideDropdownMobile')" class="flex items-center w-full py-2 hover:bg-green-100 rounded">
+            คู่มือ <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"/></svg>
+        </button>
+        <div id="guideDropdownMobile" class="hidden pl-4">
+            <a href="student_guide.html" class="block py-2 hover:bg-green-100 rounded">คู่มือนักศึกษา</a>
+            <a href="teacher_guide.html" class="block py-2 hover:bg-green-100 rounded">คู่มืออาจารย์</a>
+            <a href="staff_guide.html" class="block py-2 hover:bg-green-100 rounded">คู่มือเจ้าหน้าที่</a>
+        </div>
+
+        <a href="faq.html" class="block py-2 hover:bg-green-100 rounded">คำถามที่พบบ่อย</a>
+        <a href="contact.html" class="block py-2 hover:bg-green-100 rounded">ติดต่อ</a>
+        </div>
+    </nav>
+
+
+    <script>
+        function toggleDropdown(id) {
+            const dropdowns = ['academicDropdown', 'guideDropdown', 'loginDropdown'];
+            dropdowns.forEach(drop => {
+                if (drop === id) {
+                    document.getElementById(drop).classList.toggle('hidden');
+                } else {
+                    document.getElementById(drop).classList.add('hidden');
+                }
+            });
+        }
+
+        // ปิด dropdown เมื่อคลิกนอก
+        window.addEventListener('click', function(e){
+            const academicBtn = document.querySelector('button[onclick="toggleDropdown(\'academicDropdown\')"]');
+            const guideBtn = document.querySelector('button[onclick="toggleDropdown(\'guideDropdown\')"]');
+            const loginBtn = document.querySelector('button[onclick="toggleDropdown(\'loginDropdown\')"]');
+            const academicMenu = document.getElementById('academicDropdown');
+            const guideMenu = document.getElementById('guideDropdown');
+            const loginMenu = document.getElementById('loginDropdown');
+
+            if (!academicBtn.contains(e.target) && !academicMenu.contains(e.target)) {
+                academicMenu.classList.add('hidden');
+            }
+            if (!guideBtn.contains(e.target) && !guideMenu.contains(e.target)) {
+                guideMenu.classList.add('hidden');
+            }
+            if (!loginBtn.contains(e.target) && !loginMenu.contains(e.target)) {
+                loginMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <script>
+    const images = ["Picture/รักษาสภาพ.jpg", "Picture/พ้นสภาพ.jpg", "Picture/ห้องเรียนอยู่ไหน.gif"]; // สามารถเพิ่มรูปได้ตามต้องการ
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    function showImage(index) {
+        document.getElementById('sliderImage').src = images[index];
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextImage, 5000); // ความเร็วในการเลื่อนของรูป 1000 = 1 วินาที/ต่อรูป
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    window.onload = startAutoSlide; // เริ่มเลื่อนอัตโนมัติเมื่อโหลดหน้าเว็บ
+
+    
+    function toggleDropdown(id) {
+        document.getElementById(id).classList.toggle('hidden');
+    }
+
+    // ปิด dropdown เมื่อคลิกข้างนอก
+    window.addEventListener('click', function(e){
+        const ids = ['academicDropdown', 'guideDropdown', 'loginDropdown', 'mainMenu', 'academicDropdownMobile', 'guideDropdownMobile'];
+        ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && !el.contains(e.target) && !e.target.closest(`[onclick="toggleDropdown('${id}')"]`)) {
+                el.classList.add('hidden');
+            }
+        });
+    });
+
+    </script>
+
+    
+    <!-- Image Slider -->
+        <div class="relative w-full max-w-3xl mx-auto mb-10">
+            <img id="sliderImage" src="Picture/รักษาสภาพ.jpg" alt="Slide"
+                class="w-full max-w-full h-auto max-h-[400px] object-contain rounded-lg shadow-lg transition-all duration-500">
+
+            <button onclick="prevImage()" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-green-700 px-4 py-2 rounded-r shadow-md">
+                ◀
+            </button>
+            <button onclick="nextImage()" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-green-700 px-4 py-2 rounded-l shadow-md">
+                ▶
+            </button>
+        </div>
+
+    <!-- Latest News -->
+    <section class="container mx-auto py-10 px-6">
+    <h2 class="text-2xl font-bold mb-6 text-green-700">ข่าวล่าสุด Latest News</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+            <img src="Picture\คู่มือการใช้งาน Microsoft Teams.png" alt="คู่มีการใช้งาน MSteam สำหรับอาจารย์" class="h-32 object-cover rounded mb-4">
+            <h3 class="text-lg font-semibold mb-2">หัวข้อข่าวที่ 1</h3>
+            <p class="text-sm text-gray-600 mb-2">วันที่ประกาศ 20 มิถุนายน 2568</p>
+            <p class="text-gray-700">รายละเอียดข่าวที่ 1...</p>
+        </div>
+        <div class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
+            <img src="Picture\เกษตรเพื่อชีวิต.jpg" alt="เกษตรเพื่อชีวิต" class="h-32 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">หัวข้อข่าวที่ 2</h3>
+            <p class="text-sm text-gray-600 mb-2">วันที่ประกาศ 20 มิถุนายน 2568</p>
+            <p class="text-gray-700">รายละเอียดข่าวที่ 2...</p>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-green-700 text-white py-6">
+        
+</footer>
+
+</body>
+</html>

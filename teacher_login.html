@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบสำหรับอาจารย์</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #e8f5e9, #ffffff);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="bg-white p-10 rounded-3xl shadow-xl w-full max-w-lg border border-gray-200">
+        <div class="text-center mb-8">
+            <img src="Picture\Maejo_logo.png" alt="Maejo University Logo" class="h-20 mx-auto mb-4">
+            <h1 class="text-3xl font-extrabold text-green-800">เข้าสู่ระบบสำหรับอาจารย์</h1>
+            <p class="text-base text-gray-600 mt-2">กรุณากรอกชื่อผู้ใช้และรหัสผ่านเพื่อเข้าสู่ระบบ</p>
+        </div>
+
+        <div class="space-y-6">
+        <div>
+            <label for="username" class="block text-sm font-medium text-gray-700 mb-1">ชื่อผู้ใช้</label>
+            <input type="text" id="username" name="username" required
+               class="block w-full border border-gray-300 rounded-lg shadow-sm px-4 py-3 text-lg focus:ring-green-500 focus:border-green-500">
+        </div>
+
+        <div>
+            <label for="password" class="block text-sm font-medium text-gray-700 mb-1">รหัสผ่าน</label>
+            <input type="password" id="password" name="password" required
+               class="block w-full border border-gray-300 rounded-lg shadow-sm px-4 py-3 text-lg focus:ring-green-500 focus:border-green-500">
+        </div>
+
+        <div>
+            <a href="teacher_dashboard.html"
+            class="block w-full text-center bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-4 rounded-lg transition duration-200">
+            เข้าสู่ระบบ
+            </a>
+        </div>
+
+        <div class="flex justify-between mt-6 text-sm">
+            <a href="#" class="text-green-600 hover:underline">ลืมรหัสผ่าน</a>
+            <a href="index.html" class="text-green-700 hover:underline">กลับหน้าหลัก</a>
+        </div>
+    </div>
+
+
+    
+
+</body>
+</html>

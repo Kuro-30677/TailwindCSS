@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>บันทึกเกรดรายบุคคล</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-white min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-green-700 text-white py-4 shadow-md">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-xl font-bold">บันทึกเกรดรายบุคคล</h1>
+      <a href="teacher_dashboard.html" class="text-sm underline hover:text-gray-300">ย้อนกลับ</a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto px-6 py-10 flex-grow">
+    <h2 class="text-2xl font-semibold text-green-800 mb-6 text-center">กรอกเกรดนักศึกษา (วิชาการพัฒนาเว็บแอปพลิเคชัน)</h2>
+
+    <form action="#" method="post">
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white shadow rounded-xl overflow-hidden">
+          <thead class="bg-green-100 text-green-800">
+            <tr>
+              <th class="px-4 py-3 text-left">ลำดับ</th>
+              <th class="px-4 py-3 text-left">รหัสนักศึกษา</th>
+              <th class="px-4 py-3 text-left">ชื่อ - นามสกุล</th>
+              <th class="px-4 py-3 text-left">เกรด</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+
+            <!-- รายชื่อนักศึกษา 8 คน -->
+            <tr class="border-b"><td class="px-4 py-3">1</td><td class="px-4 py-3">65010001</td><td class="px-4 py-3">ณัฐวุฒิ สุขใจ</td><td class="px-4 py-3"><input type="text" name="grade_1" class="w-20 border rounded px-2 py-1" /></td></tr>
+            <tr class="border-b"><td class="px-4 py-3">2</td><td class="px-4 py-3">65010002</td><td class="px-4 py-3">ปิยฉัตร วงศ์คำ</td><td class="px-4 py-3"><input type="text" name="grade_2" class="w-20 border rounded px-2 py-1" /></td></tr>
+            <tr class="border-b"><td class="px-4 py-3">3</td><td class="px-4 py-3">65010003</td><td class="px-4 py-3">ศศิธร ใจดี</td><td class="px-4 py-3"><input type="text" name="grade_3" class="w-20 border rounded px-2 py-1" /></td></tr>
+            <tr class="border-b"><td class="px-4 py-3">4</td><td class="px-4 py-3">65010004</td><td class="px-4 py-3">อธิศักดิ์ คำหล้า</td><td class="px-4 py-3"><input type="text" name="grade_4" class="w-20 border rounded px-2 py-1" /></td></tr>
+            <tr class="border-b"><td class="px-4 py-3">5</td><td class="px-4 py-3">65010005</td><td class="px-4 py-3">ณิชารีย์ ทองแท้</td><td class="px-4 py-3"><input type="text" name="grade_5" class="w-20 border rounded px-2 py-1" /></td></tr>
+            <tr class="border-b"><td class="px-4 py-3">6</td><td class="px-4 py-3">65010006</td><td class="px-4 py-3">พงศธร อินทร์ดี</td><td class="px-4 py-3"><input type="text" name="grade_6" class="w-20 border rounded px-2 py-1" /></td></tr>
+            <tr class="border-b"><td class="px-4 py-3">7</td><td class="px-4 py-3">65010007</td><td class="px-4 py-3">จิราพร สิงห์ทอง</td><td class="px-4 py-3"><input type="text" name="grade_7" class="w-20 border rounded px-2 py-1" /></td></tr>
+            <tr class="border-b"><td class="px-4 py-3">8</td><td class="px-4 py-3">65010008</td><td class="px-4 py-3">กิตติภพ ทองมาก</td><td class="px-4 py-3"><input type="text" name="grade_8" class="w-20 border rounded px-2 py-1" /></td></tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 text-center">
+        <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
+          บันทึกเกรด
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-100 text-center py-4 text-sm text-green-800">
+    
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REG Registration Office - Maejo University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center py-3 px-6">
+            <!-- Logo + Title -->
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="Picture\Maejo_logo.png" alt="Maejo University Logo" class="h-14">
+                </a>
+                <div class="text-green-700 leading-tight">
+                    <h1 class="text-4xl font-extrabold">REG</h1>
+                    <p class="text-lg font-semibold">Registration Office</p>
+                    <p class="text-sm">Maejo University</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="bg-green-600 text-white text-sm relative">
+            <div class="container mx-auto flex justify-between items-center px-6 py-2">
+
+                <!-- Left: Hamburger & Menu -->
+                <div class="flex items-center gap-4">
+                    <!-- Hamburger (Mobile) -->
+                    <button onclick="toggleDropdown('mainMenu')" class="md:hidden focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                    <!-- Menu (Desktop) -->
+                    <div class="hidden md:flex gap-4 items-center">
+                        <a href="index.html" class="hover:underline">หน้าหลัก</a>
+
+                        <div class="relative group">
+                            <button onclick="toggleDropdown('academicDropdown')" class="flex items-center hover:underline focus:outline-none">
+                                บริการวิชาการ <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"/></svg>
+                            </button>
+                            <div id="academicDropdown" class="absolute hidden bg-white text-green-700 mt-2 rounded shadow-lg w-48 z-10">
+                                <a href="ตารางเรียน.html" class="block px-4 py-2 hover:bg-green-100">ตารางเรียน</a>
+                                <a href="ปฎิทินการศึกษา.html" class="block px-4 py-2 hover:bg-green-100">ปฏิทินการศึกษา</a>
+                                <a href="ตารางการใช้ห้องเรียน.html" class="block px-4 py-2 hover:bg-green-100">ตารางการใช้ห้อง</a>
+                            </div>
+                        </div>
+
+                        <div class="relative group">
+                            <button onclick="toggleDropdown('guideDropdown')" class="flex items-center hover:underline focus:outline-none">
+                                คู่มือ <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"/></svg>
+                            </button>
+                            <div id="guideDropdown" class="absolute hidden bg-white text-green-700 mt-2 rounded shadow-lg w-48 z-10">
+                                <a href="student_guide.html" class="block px-4 py-2 hover:bg-green-100">คู่มือนักศึกษา</a>
+                                <a href="teacher_guide.html" class="block px-4 py-2 hover:bg-green-100">คู่มืออาจารย์</a>
+                                <a href="staff_guide.html" class="block px-4 py-2 hover:bg-green-100">คู่มือเจ้าหน้าที่</a>
+                            </div>
+                        </div>
+
+                        <a href="faq.html" class="hover:underline">คำถามที่พบบ่อย</a>
+                        <a href="contact.html" class="hover:underline">ติดต่อ</a>
+                    </div>
+                </div>
+
+                <!-- Right: Login -->
+                <div class="flex gap-4 items-center">
+                    <div class="relative group">
+                        <button onclick="toggleDropdown('loginDropdown')" 
+                            class="bg-white text-green-700 font-bold text-xs md:text-sm px-3 py-1 rounded hover:bg-green-100 transition flex items-center">
+                            เข้าสู่ระบบ
+                            <svg class="ml-1 w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"/></svg>
+                        </button>
+                        <div id="loginDropdown" class="absolute right-0 hidden bg-white text-green-700 mt-2 rounded shadow-lg w-48 z-10">
+                            <a href="student_login.html" class="block px-4 py-2 hover:bg-green-100">เข้าสู่ระบบสำหรับนักศึกษา</a>
+                            <a href="teacher_login.html" class="block px-4 py-2 hover:bg-green-100">เข้าสู่ระบบสำหรับอาจารย์</a>
+                        </div>
+                    </div>
+                    <div class="text-white text-xs md:text-sm">ไทย | Eng</div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mainMenu" class="md:hidden hidden bg-white text-green-700 px-6 py-4 space-y-2 shadow-lg">
+                <a href="index.html" class="block py-2 hover:bg-green-100 rounded">หน้าหลัก</a>
+                <button onclick="toggleDropdown('academicDropdownMobile')" class="flex items-center w-full py-2 hover:bg-green-100 rounded">
+                    บริการวิชาการ <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"/></svg>
+                </button>
+                <div id="academicDropdownMobile" class="hidden pl-4">
+                    <a href="ตารางเรียน.html" class="block py-2 hover:bg-green-100 rounded">ตารางเรียน</a>
+                    <a href="ปฎิทินการศึกษา.html" class="block py-2 hover:bg-green-100 rounded">ปฏิทินการศึกษา</a>
+                    <a href="ตารางการใช้ห้องเรียน.html" class="block py-2 hover:bg-green-100 rounded">ตารางการใช้ห้อง</a>
+                </div>
+
+                <button onclick="toggleDropdown('guideDropdownMobile')" class="flex items-center w-full py-2 hover:bg-green-100 rounded">
+                    คู่มือ <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z"/></svg>
+                </button>
+                <div id="guideDropdownMobile" class="hidden pl-4">
+                    <a href="student_guide.html" class="block py-2 hover:bg-green-100 rounded">นักศึกษา</a>
+                    <a href="teacher_guide.html" class="block py-2 hover:bg-green-100 rounded">อาจารย์</a>
+                    <a href="staff_guide.html" class="block py-2 hover:bg-green-100 rounded">เจ้าหน้าที่</a>
+                </div>
+
+                <a href="faq.html" class="block py-2 hover:bg-green-100 rounded">คำถามที่พบบ่อย</a>
+                <a href="contact.html" class="block py-2 hover:bg-green-100 rounded">ติดต่อ</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <body class="bg-gray-50">
+        <div class="container mx-auto px-6 py-8">
+            <h1 class="text-2xl font-bold text-green-700 mb-4">ตารางการใช้ห้องเรียน</h1>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-700">เลือกอาคาร:</label>
+                <select class="block w-full md:w-64 px-4 py-2 border border-gray-300 rounded">
+                    <option value="101">101:อาคารพัฒนาวิศัยทัศน์</option>
+                    <option value="102">102:ประเสริฐ ณ นคร</option>
+                    <option value="104">104:สมิตตานนท์</option>
+                    <option value="105">105:คณะวิศวกรรมและอุตสาหกรรมเกษตร</option>
+                    <option value="106">106:คณะวิทยาศาสตร์</option>
+                    <option value="107">107:คณะเทคโนโลยีการประมงและทรัพยากรทางน้ำ</option>
+                    <option value="108">108:คณะบริหารธุรกิจ</option>
+                    <option value="109">109:ภาควิชาทรัพยากรดินและสิ่งแวดล้อม</option>
+                    <option value="110">110:อาคารเทคโนโลยีภูมิทัศน์</option>
+                    <option value="111">111:ศูนย์กีฬาเฉลิมพระเกียรติ (โซน B)</option>
+                    <option value="112">112:ศูนย์กล้วยไม้และไม้ดอกไม้ประดับ</option>
+                    <option value="113">113:คณะสัตวศาสตร์และเทคโนโลยี</option>
+                    <option value="114">114:อาคารกำจรบุญแปง</option>
+                    <option value="115">115:อาคารเมล็ดพันธุ์</option>
+                    <option value="116">116:อาคารไม้ผล</option>
+                    <option value="117">117:อาคารพืชผัก</option>
+                    <option value="118">118:อาคารเนื้อเยื่อ</option>
+                    <option value="119">119:ภาควิชา</option>
+                    <option value="120">120:TBA</option>
+                    <option value="121">121:ภาคพืชไร่</option>
+                    <option value="122">122:อาคารเทคโนโลยีชีวภาพ</option>
+                    <option value="123">123:อาคาร 77</option>
+                    <option value="124">124:ภาควิชาพืชสวน</option>
+                    <option value="125">125:อาคารสุวรรณวาจกกิสิกิจ</option>
+                    <option value="126">126:อาคารแม่โจ้ 70 ปี : สร้างปัญญาเพื่อแผ่นดิน</option>
+                    <option value="127">127:อาคารปฏิบัติการรวมทางพืช</option>
+                    <option value="128">128:อาคารหม่อนไหม</option>
+                    <option value="129">129:ศูนย์วิจัยควบคุมศัตรูพืชโดยชีวินทรีย์ฯ</option>
+                    <option value="130">130:อาคารเฉลิมพระเกียรติสมเด็จพระเทพฯ</option>
+                    <option value="140">140:อาคารไม้ผล 2</option>
+                    <option value="141">141:อาคารเศรษฐศาสตร์</option>
+                    <option value="142">142:อาคารจุฬาภรณ์</option>
+                    <option value="143">143:อาคารเทพ พงษ์พานิช</option>
+                    <option value="144">144:อาคาร 75 ปี (คณะสารสนเทศแลการสื่อสาร)</option>
+                    <option value="145">145:สระว่ายน้ำอุบุลรัตนราชกัญญา</option>
+                    <option value="146">146:วิทยาลัยพลังงานทดแทน</option>
+                    <option value="147">147:อาคารเทอดกสิกร</option>
+                    <option value="148">148:อาคารเรียนรวม 80 ปี</option>
+                    <option value="149">149:อาคารเรียนรวมคณะสถาปัตยกรรมศาสตร์และการออกแบบสิ่งแวดล้อม</option>
+                    <option value="150">150:อาคารศูนย์ภาษา</option>
+                    <option value="151">151:อาคารพยาบาลศาสตร์</option>
+                    <option value="152">152:ศูนย์เรียนรู้เทคโนโลยีการควบคุมศัตรูพืชโดยชีววิธี (ฟาร์มมหาวิทยาลัย)</option>
+                    <option value="153">153:การเรียนการสอนแบบออนไลน์</option>
+                    <option value="154">154:อาคารเรียนรวมและปฏิบัติการ คณะสัตวแพทยศาสตร์</option>
+                    <option value="155">155:อาคารปฏิบัติการโรงพยาบาลสัตว์</option>
+                </select>
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium text-gray-700">เลือกห้องเรียน:</label>
+                <select class="block w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded">
+                    <option value="101">คาวบอยเธียเตอร์  ประเภท:ไม่มีกำหนด ความจุ:70 พื้นที่:70</option>
+                    <option value="102">ช่วง 112 ประเภท:ไม่มีกำหนด ความจุ:60 พื้นที่:100</option>
+                    <option value="103">ช่วง 121 ประเภท:ไม่มีกำหนด ความจุ:120 พื้นที่:100</option>
+                    <option value="104">ช่วง 121(A) ประเภท:ไม่มีกำหนด ความจุ:60 พื้นที่:100</option>
+                    <option value="105">ช่วง 121(B) ประเภท:ไม่มีกำหนด ความจุ:60 พื้นที่:100</option>
+                    <option value="106">ช่วง 122 ประเภท:ไม่มีกำหนด ความจุ:60 พื้นที่:100</option>
+                    <option value="107">ช่วง 123 ประเภท:ไม่มีกำหนด ความจุ:60 พื้นที่:100</option>
+                    <option value="108">ช่วง 126 ประกาท:ไม่มีกำหนด ความจุ:60 พื้นที่:100</option>
+                    <option value="109">ช่วง 127 ประเภท:ไม่มีกำหนด ความจุ:60 พื้นที่:100</option>
+                    <option value="110">ช่วง 128 ประเภท:ไม่มีกำหนด ความจุ:120 พื้นที่:100</option>
+                </select>
+            </div>
+            <div class="flex flex-col md:flex-row items-end gap-4 mb-6">
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-700">ปีการศึกษา</label>
+                    <select class="block w-full md:w-24 px-4 py-2 border border-gray-300 rounded-lg shadow-sm">
+                        <option value="2023">2566</option>
+                        <option value="2024">2567</option>
+                        <option value="2025">2568</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-700">ภาคเรียน</label>
+                    <select class="block w-full md:w-24 px-4 py-2 border border-gray-300 rounded-lg shadow-sm">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3(ภาคฤดูร้อน)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="overflow-x-auto w-full">
+              <table class="w-full table-fixed text-center border border-gray-300 text-[11px] min-w-[700px] ">
+                <thead>
+                        <tr class="bg-zinc-700 text-white">
+                            <th
+                                class="py-3 px-2 border border-white w-[90px] sticky left-0 z-10 font-semibold hidden-lg rounded-tl">
+                                วัน/เวลา</th>
+                            <th class="py-3 px-2 border border-white w-[90px] font-semibold">8:00-9:00</th>
+                            <th class="py-3 px-2 border border-white w-[90px] font-semibold">9:00-10:00</th>
+                            <th class="py-3 px-2 border border-white w-[90px] font-semibold">10:00-11:00</th>
+                            <th class="py-3 px-2 border border-white w-[90px] font-semibold">11:00-12:00</th>
+                            <th class="py-3 px-2 border border-white w-[90px] font-semibold">12:00-13:00</th>
+                            <th class="py-3 px-2 border border-white w-[90px] font-semibold">13:00-14:00</th>
+                            <th class="py-3 px-2 border border-white w-[90px] font-semibold">14:00-15:00</th>
+                            <th class="py-3 px-2 border border-white w-[90px] font-semibold">15:00-16:00</th>
+                            <th class="py-3 px-2 border border-white w-[90px] font-semibold">16:00-17:00</th>
+                            <th class="py-3 px-2 border border-white w-[90px] font-semibold">17:00-18:00</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-emerald-50 transition-colors duration-200 ">
+                        <td
+                            class="bg-green-300 font-semibold text-left px-3 py-3 border border-gray-300 sticky left-0 z-0 text-black-700">
+                            จันทร์
+                        </td>
+                        <td class="border border-gray-300 p-1" colspan="3">
+                            <div class="bg-green-100 text-green-700 p-1 rounded">
+                                <span class="font-semibold text-emerald-800 text-xs">10601210</span><br>
+                                <span class="text-xs">(3) 1,L1</span>
+                            </div>
+                        </td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                                <td class="border border-gray-300 p-1" colspan="2">
+                                    <div
+                                        class="bg-green-100 text-green-700 p-1 rounded">
+                                        <div class="font-semibold text-emerald-800 text-xs">10603480</div>
+                                        <div class="text-xs text-emerald-700">(1) 1,L1</div>
+                                    </div>
+                                </td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                    </tr>
+                    <tr class="hover:bg-emerald-50 transition-colors duration-200">
+                        <td
+                            class="bg-green-300 font-semibold text-left px-3 py-3 border border-gray-300 sticky left-0 z-0 text-black-700">
+                            อังคาร
+                        </td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 p-1" colspan="3">
+                            <div class="bg-green-100 text-green-700 p-1 rounded">
+                                <div class="font-semibold text-emerald-800 text-xs">10603380</div>
+                                <div class="text-xs text-emerald-700">(3) 1,L1</div>
+                            </div>
+                        </td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                    </tr>
+                    <tr class="hover:bg-emerald-50 transition-colors duration-200">
+                        <td
+                            class="bg-green-300 font-semibold text-left px-3 py-3 border border-gray-300 sticky left-0 z-0 text-black-700">
+                            พุธ
+                        </td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                    </tr>
+                    <tr class="hover:bg-emerald-50 transition-colors duration-200">
+                        <td
+                            class="bg-green-300 font-semibold text-left px-3 py-3 border border-gray-300 sticky left-0 z-0 text-black-700">
+                            พฤหัสบดี
+                        </td>
+                        <td class="border border-gray-300 p-1" colspan="3">
+                            <div class="bg-green-100 text-green-700 p-1 rounded">
+                                <div class="font-semibold text-emerald-800 text-xs">10601210</div>
+                                <div class="text-xs">(3) 1,L1</div>
+                            </div>
+                        </td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 p-1" colspan="2">
+                            <div class="bg-green-100 text-green-700 p-1 rounded">
+                                <div class="font-semibold text-emerald-800 text-xs">พท470</div>
+                                <div class="text-xs text-emerald-700">(1) 1,L1</div>
+                            </div>
+                        </td>
+                        <td class="border border-gray-300 p-1" colspan="3">
+                            <div class="bg-green-100 text-green-700 p-1 rounded">
+                                <div class="font-semibold text-emerald-800 text-xs">10603480</div>
+                                <div class="text-xs">(3) 1,L1</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-emerald-50 transition-colors duration-200">
+                        <td
+                            class="bg-green-300 font-semibold text-left px-3 py-3 border border-gray-300 sticky left-0 z-0 text-black-700">
+                            ศุกร์
+                        </td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 bg-gray-50"></td>
+                        <td class="border border-gray-300 p-1" colspan="1">
+                            <div class="bg-green-100 text-green-700 p-1 rounded">
+                                <div class="font-semibold text-emerald-800 text-xs">10603460</div>
+                                <div class="text-xs text-emerald-700">(3) 1,L1</div>
+                            </div>
+                        </td>
+                        <td class="border border-gray-300 p-1" colspan="4">
+                            <div class="bg-green-100 text-green-700 p-1 rounded">
+                                <div class="font-semibold text-emerald-800 text-xs">10603460</div>
+                                <div class="text-xs text-emerald-700">(3) 1,L1</div>
+                            </div>
+                        </td>
+                </tbody>
+              </table>
+            </div>
+            <h2 class="text-emerald-800 md:w1/2 font-semibold mb-4"></h2>
+            <div class="h-4"></div> <!-- เว้น 1 บรรทัด -->
+            <h2 class="text-emerald-800 md:w1/2 font-semibold mb-4">
+                ข้อมูลในตารางประกอบด้วย รหัสวิชา (หน่วยกิต) กลุ่ม, ระดับการศึกษา
+            </h2>
+            <div class="h-4"></div> <!-- เว้น 1 บรรทัด -->
+            <div class="text-gray-700 text-sm md:w-1/2 mb-6">
+                <b>ระดับการศึกษา:</b><br>
+                L0 = ไม่กำหนด<br>
+                L1 = ปริญญาตรี ปกติ<br>
+                L2 = ปริญญาตรี สมทบ<br>
+                L3 = ปริญญาโท ปกติ<br>
+                L4 = ปริญญาโท สมทบ<br>
+                L5 = ปริญญาเอก ปกติ<br>
+                L6 = ประกาศนียบัตร<br>
+                L7 = ปริญญาเอก สมทบ<br>
+                L8 = ปริญญาตรีควบโท ปกติ
+            </div>
+        </div>
+    </body>
+
+    <!-- Footer -->
+    <footer class="bg-green-700 text-white py-6 text-center text-sm">
+        <!--ใส่ข้อมูลส่วนท้ายตรงนี้-->
+    </footer>
+
+    <!-- Script -->
+    <script>
+        function toggleDropdown(id) {
+            document.getElementById(id).classList.toggle('hidden');
+        }
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function(e) {
+            const ids = ['academicDropdown', 'guideDropdown', 'loginDropdown', 'mainMenu', 'academicDropdownMobile', 'guideDropdownMobile'];
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && !el.contains(e.target) && !e.target.closest(`[onclick="toggleDropdown('${id}')"]`)) {
+                    el.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
